@@ -1,0 +1,60 @@
+# Dokploy Configuration File (opcional)
+# Este archivo puede ayudar a Dokploy a detectar automáticamente la configuración
+
+name: volleypass-projects
+description: Discovery service para proyectos VolleyPass con PocketBase
+
+# Tipo de proyecto
+type: docker-compose
+
+# Build configuration
+build:
+  context: .
+  dockerfile: Dockerfile
+
+# Environment variables template
+env:
+  - name: PORT
+    value: "8090"
+    required: true
+  - name: PB_VERSION
+    value: "0.23.4"
+    required: true
+  - name: PB_ENCRYPTION_KEY
+    value: ""
+    required: true
+    description: "Generar con: openssl rand -hex 32"
+
+# Port mappings
+ports:
+  - container: 8090
+    host: 8090
+    protocol: tcp
+
+# Volume mappings
+volumes:
+  - name: pb_data
+    container_path: /pb/pb_data
+    persist: true
+  - name: pb_hooks
+    container_path: /pb/pb_hooks
+  - name: pb_migrations
+    container_path: /pb/pb_migrations
+
+# Health check
+healthcheck:
+  path: /api/health
+  port: 8090
+  interval: 30s
+  timeout: 3s
+  retries: 3
+
+# Resource limits (opcional)
+resources:
+  memory: 512Mi
+  cpu: 0.5
+
+# Deployment strategy
+deployment:
+  strategy: recreate
+  restart_policy: unless-stopped

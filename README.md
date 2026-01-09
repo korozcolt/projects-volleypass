@@ -35,7 +35,21 @@ Este servicio proporciona una API centralizada para gestionar y descubrir proyec
          └─► Admin UI (/_)
 ```
 
-## Prerequisitos
+## 🚀 Deployment en Producción (Dokploy)
+
+**Para hacer deployment en Dokploy, consulta la guía completa:**
+📖 **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Guía paso a paso para deployment con Git
+
+La guía incluye:
+- Configuración desde repositorio Git
+- Variables de entorno de producción
+- Configuración de dominio y SSL
+- Backup y mantenimiento
+- Troubleshooting
+
+---
+
+## Prerequisitos (Local)
 
 - Docker
 - Docker Compose
