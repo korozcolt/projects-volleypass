@@ -1,0 +1,22 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2026-01-09T10:00:00Z",
+    "projects": [
+      {
+        "id": "athletic-sincelejo",
+        "name": "Athletic Sincelejo",
+        "shortName": "Athletic",
+        "description": "Club de voleibol Athletic Sincelejo",
+        "baseUrl": "https://api.athleticsincelejo.com",
+        "isActive": true
+      },
+      {
+        "id": "liga-sucre",
+        "name": "Liga de Voleibol de Sucre",
+        "shortName": "Liga Sucre",
+        "description": "Liga departamental de voleibol de Sucre",
+        "baseUrl": "https://api.ligadevoleiboldesucre.com",
+        "isActive": true
+      }
+    ]
+  }
